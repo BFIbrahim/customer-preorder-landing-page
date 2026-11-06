@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b5960" />
+  <title>Zocs Lifestyle | প্রি-অর্ডার</title>
+  <meta name="description" content="Zocs Lifestyle-এর নতুন লেদার ওয়ালেটের প্রি-অর্ডার করুন। পণ্য হাতে পেলে ডেলিভারি চার্জ সম্পূর্ণ ফ্রি।" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zocs: {
+              teal: '#0B5960',
+              deep: '#073F45',
+              red: '#A82025',
+              cream: '#F8F5EC',
+              ink: '#182729'
+            }
+          },
+          fontFamily: { bangla: ['Hind Siliguri', 'sans-serif'] },
+          boxShadow: {
+            soft: '0 18px 50px rgba(7, 63, 69, .10)',
+            card: '0 10px 30px rgba(7, 63, 69, .08)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hind Siliguri', sans-serif; background: #fbfaf6; color: #182729; }
+    .hero-pattern {
+      background:
+        radial-gradient(circle at 10% 15%, rgba(168,32,37,.07), transparent 25%),
+        radial-gradient(circle at 90% 5%, rgba(11,89,96,.10), transparent 30%),
+        linear-gradient(135deg, #fbfaf6 0%, #f4f0e5 100%);
+    }
+    .product-placeholder {
+      background:
+        radial-gradient(ellipse at 50% 78%, rgba(7,63,69,.13), transparent 34%),
+        linear-gradient(145deg, #f4f0e5, #e9e4d8);
+    }
+    .highlight {
+      color: #0B5960;
+      background: linear-gradient(transparent 57%, rgba(11,89,96,.13) 57%);
+      font-weight: 700;
+    }
+    .red-highlight {
+      color: #A82025;
+      background: linear-gradient(transparent 57%, rgba(168,32,37,.12) 57%);
+      font-weight: 700;
+    }
+    .choice:checked + label {
+      border-color: #0B5960;
+      background: #edf5f3;
+      box-shadow: 0 0 0 2px rgba(11,89,96,.10);
+    }
+    .choice:checked + label .checkmark { background: #0B5960; border-color: #0B5960; color: white; }
+    .checkmark { transition: .2s ease; }
+    .input-field:focus { outline: none; border-color: #0B5960; box-shadow: 0 0 0 3px rgba(11,89,96,.10); }
+    .gallery-track { touch-action: pan-y; cursor: grab; }
+    .gallery-track:active { cursor: grabbing; }
+    .gallery-dot { width: 6px; height: 6px; border-radius: 9999px; background: rgba(7,63,69,.28); transition: .2s ease; }
+    .gallery-dot.active { width: 17px; background: #0B5960; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body class="font-bangla antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-zocs-teal/10 bg-[#fbfaf6]/90 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <a href="#" class="flex items-center gap-3" aria-label="Zocs Lifestyle হোম">
+        <img src="https://i.ibb.co.com/1ttbRrXX/548196661-122187893396295916-1404995700463876668-n.jpg"
+             alt="Zocs Lifestyle লোগো" class="h-12 w-12 rounded-xl object-cover sm:h-14 sm:w-14">
+        <span class="text-lg font-bold tracking-tight text-zocs-deep sm:text-xl">ZOCS LIFESTYLE</span>
+      </a>
+      <a href="#preorder" class="rounded-full bg-zocs-teal px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-zocs-teal/20 transition hover:bg-zocs-deep sm:px-5">
+        প্রি-অর্ডার করুন
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Announcement -->
+    <section class="hero-pattern relative overflow-hidden">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_.85fr] lg:py-24">
+        <div class="relative z-10">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-zocs-teal/15 bg-white/75 px-4 py-2 text-sm font-semibold text-zocs-teal shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-zocs-red"></span>
+            আপনাদের জন্য বিশেষ প্রি-অর্ডার সুযোগ
+          </div>
+          <h1 class="max-w-2xl text-3xl font-bold leading-[1.35] tracking-tight text-zocs-deep sm:text-4xl lg:text-[3.25rem]">
+            আপনাদের অপেক্ষা আর আগ্রহের কথা আমরা
+            <span class="text-zocs-red">জানতে পেরেছি!</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+            আমাদের নতুন লেদার ওয়ালেটটি নিয়ে আপনাদের আগ্রহ দেখে আমরা সত্যিই আনন্দিত। এখনো পণ্যটি বাজারে আনতে না পারায় আমরা আন্তরিকভাবে দুঃখিত। তবে আপনাদের জন্য আছে একটি
+            <span class="highlight">সুখবর!</span>
+          </p>
+          <div class="mt-6 rounded-2xl border border-zocs-teal/15 bg-white/80 p-5 shadow-card sm:p-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zocs-teal text-lg text-white">✓</span>
+              <p class="text-base leading-8 text-slate-700 sm:text-lg">
+                যারা আগাম প্রি-অর্ডার করবেন, পণ্য হাতে পাওয়ার পর তাঁদের কাছে আমরা পাঠাব
+                <span class="highlight">সম্পূর্ণ বিনামূল্যে!</span>
+                অর্থাৎ, <span class="highlight">ডেলিভারি চার্জ একদম ফ্রি।</span>
+              </p>
+            </div>
+            <div class="mt-4 flex items-start gap-3 border-t border-zocs-teal/10 pt-4">
+              <span class="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zocs-red text-lg text-white">৳</span>
+              <p class="text-base leading-8 text-slate-700 sm:text-lg">
+                আর সবচেয়ে ভালো খবর—এখন প্রি-অর্ডার করতে
+                <span class="red-highlight">কোনো অগ্রিম টাকা দিতে হবে না।</span>
+                পণ্য হাতে পাওয়ার পর মূল্য পরিশোধ করবেন।
+              </p>
+            </div>
+          </div>
+          <a href="#preorder" class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-zocs-teal px-7 py-4 text-base font-bold text-white shadow-lg shadow-zocs-teal/20 transition hover:-translate-y-0.5 hover:bg-zocs-deep sm:w-auto">
+            এখনই প্রি-অর্ডার করুন <span aria-hidden="true">↓</span>
+          </a>
+          <p class="mt-3 text-sm text-slate-500">কোনো অগ্রিম পেমেন্ট নয় · পণ্য হাতে পেলে মূল্য পরিশোধ</p>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="absolute -inset-5 rounded-[2.5rem] bg-zocs-teal/10 blur-2xl"></div>
+          <div class="relative rounded-[2rem] border border-white/80 bg-white/70 p-4 shadow-soft backdrop-blur sm:p-6">
+            <div class="overflow-hidden rounded-[1.5rem] border border-zocs-teal/10 bg-[#f4f0e5]">
+              <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943151/WhatsApp_Image_2026-11-06_at_11.12.00_AM.jpg"
+                   alt="ZOCS Micro লেদার ওয়ালেট" class="aspect-square w-full object-contain">
+            </div>
+            <div class="flex items-center justify-between gap-3 px-1 pt-5">
+              <div>
+                <p class="font-bold text-zocs-deep">Zocs Leather Collection</p>
+                <p class="text-sm text-slate-500">আপনাদের পছন্দ, আমাদের যত্ন</p>
+              </div>
+              <span class="whitespace-nowrap rounded-full bg-zocs-teal/10 px-3 py-2 text-sm font-bold text-zocs-teal">প্রি-অর্ডার</span>
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -left-2 rounded-2xl bg-zocs-red px-4 py-3 text-white shadow-lg sm:-left-6">
+            <p class="text-xs opacity-90">আগাম অর্ডারে</p>
+            <p class="text-lg font-bold">ডেলিভারি ফ্রি!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price explanation -->
+    <section class="px-4 py-14 sm:px-6 sm:py-16">
+      <div class="mx-auto max-w-4xl rounded-3xl border border-zocs-red/10 bg-white p-6 shadow-card sm:p-9">
+        <div class="mb-4 flex items-center gap-3">
+          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-zocs-red/10 text-xl">♡</span>
+          <h2 class="text-xl font-bold text-zocs-deep sm:text-2xl">দামের বিষয়ে আপনাদের সঙ্গে খোলামেলা কথা</h2>
+        </div>
+        <p class="text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+          উৎপাদনের আগে আমরা এখনই পণ্যের সঠিক মূল্য নিশ্চিত করে বলতে পারছি না। কারণ চামড়ার দাম বৃদ্ধি, কাঁচামাল সংগ্রহ, উৎপাদন এবং কারখানা থেকে পণ্য এনে আপনাদের কাছে পৌঁছে দেওয়া—প্রতিটি ধাপেই খরচ রয়েছে।
+        </p>
+        <p class="mt-4 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+          তারপরও আমরা চেষ্টা করব আপনাদের জন্য সবচেয়ে
+          <span class="highlight">সাশ্রয়ী ও স্বাচ্ছন্দ্যদায়ক মূল্য</span>
+          নিশ্চিত করতে, ইনশাআল্লাহ।
+        </p>
+        <div class="mt-6 rounded-2xl bg-[#f2f6f3] p-5 text-center sm:p-6">
+          <p class="text-sm font-medium text-slate-600">সম্ভাব্য মূল্য</p>
+          <p class="mt-1 text-3xl font-bold tracking-tight text-zocs-teal sm:text-4xl">৳ ৬০০ – ৬৫০</p>
+          <p class="mt-2 text-sm text-slate-600">প্রি-অর্ডার করে রাখলে এই সম্ভাব্য মূল্যসীমার মধ্যে পাওয়ার আশা করছি।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order form -->
+    <section id="preorder" class="bg-[#edf3ef] px-4 py-14 sm:px-6 sm:py-20">
+      <div class="mx-auto max-w-3xl">
+        <div class="mb-8 text-center">
+          <span class="inline-flex rounded-full bg-zocs-teal/10 px-4 py-2 text-sm font-semibold text-zocs-teal">আপনার অর্ডারটি জানান</span>
+          <h2 class="mt-4 text-2xl font-bold text-zocs-deep sm:text-3xl">প্রি-অর্ডার করতে নিচের ফর্মটি পূরণ করুন</h2>
+          <p class="mt-3 text-slate-600">আপনার পছন্দের পণ্য নির্বাচন করে যোগাযোগের তথ্য দিন। অর্ডার করতে কোনো অগ্রিম টাকা লাগবে না।</p>
+        </div>
+
+        <form id="preorderForm" class="rounded-3xl border border-white bg-white p-5 shadow-soft sm:p-8">
+          <fieldset>
+            <legend class="mb-4 text-lg font-bold text-zocs-deep">১. কোন পণ্যটি নিতে চান?</legend>
+            <p class="mb-4 text-sm text-slate-500">একটি অথবা চাইলে দুটি পণ্যই নির্বাচন করতে পারবেন।</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white transition hover:border-zocs-teal/40">
+                <div class="gallery relative aspect-square overflow-hidden bg-[#f4f0e5]" data-gallery="micro" aria-label="ZOCS Micro ছবির গ্যালারি">
+                  <div class="gallery-track flex h-full transition-transform duration-500 ease-out">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943151/WhatsApp_Image_2026-11-06_at_11.12.00_AM.jpg" alt="ZOCS Micro ছবি ১" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943151/WhatsApp_Image_2026-11-06_at_11.12.02_AM_1.jpg" alt="ZOCS Micro ছবি ২" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943151/WhatsApp_Image_2026-11-06_at_11.12.03_AM.jpg" alt="ZOCS Micro ছবি ৩" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943150/WhatsApp_Image_2026-11-06_at_11.12.02_AM.jpg" alt="ZOCS Micro ছবি ৪" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943150/WhatsApp_Image_2026-11-06_at_11.12.02_AM_2.jpg" alt="ZOCS Micro ছবি ৫" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943150/WhatsApp_Image_2026-11-06_at_11.12.01_AM.jpg" alt="ZOCS Micro ছবি ৬" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943150/WhatsApp_Image_2026-11-06_at_11.12.01_AM_1.jpg" alt="ZOCS Micro ছবি ৭" class="gallery-image h-full w-full shrink-0 object-contain">
+                  </div>
+                  <button type="button" class="gallery-prev absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg text-zocs-deep shadow" aria-label="আগের ছবি">‹</button>
+                  <button type="button" class="gallery-next absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg text-zocs-deep shadow" aria-label="পরের ছবি">›</button>
+                  <div class="gallery-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5"></div>
+                  <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-zocs-deep">ZOCS Micro</span>
+                </div>
+                <div class="p-4">
+                  <input class="choice sr-only" type="checkbox" id="product1" name="products" value="ZOCS Micro">
+                  <label for="product1" class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border-2 border-slate-200 p-3 transition hover:border-zocs-teal/50">
+                    <span><span class="block font-bold text-zocs-deep">ZOCS Micro</span><span class="mt-1 block text-xs text-slate-500">এই পণ্যটি প্রি-অর্ডার করতে নির্বাচন করুন</span></span>
+                    <span class="checkmark flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-300 text-xs">✓</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white transition hover:border-zocs-teal/40">
+                <div class="gallery relative aspect-square overflow-hidden bg-[#f4f0e5]" data-gallery="nano" aria-label="ZOCS Nano ছবির গ্যালারি">
+                  <div class="gallery-track flex h-full transition-transform duration-500 ease-out">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943030/559245639_122191155944295916_8220265561448034386_n.jpg" alt="ZOCS Nano ছবি ১" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943149/558910234_122191156022295916_2962066822750030650_n.jpg" alt="ZOCS Nano ছবি ২" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943031/573343294_122193348806295916_3216926641493219471_n.jpg" alt="ZOCS Nano ছবি ৩" class="gallery-image h-full w-full shrink-0 object-contain">
+                    <img src="https://res.cloudinary.com/euyvr35m/image/upload/v1793943030/559245645_122191155980295916_504060083442588421_n.jpg" alt="ZOCS Nano ছবি ৪" class="gallery-image h-full w-full shrink-0 object-contain">
+                  </div>
+                  <button type="button" class="gallery-prev absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg text-zocs-deep shadow" aria-label="আগের ছবি">‹</button>
+                  <button type="button" class="gallery-next absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg text-zocs-deep shadow" aria-label="পরের ছবি">›</button>
+                  <div class="gallery-dots absolute bottom-3 left-0 right-0 flex justify-center gap-1.5"></div>
+                  <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-zocs-deep">ZOCS Nano</span>
+                </div>
+                <div class="p-4">
+                  <input class="choice sr-only" type="checkbox" id="product2" name="products" value="ZOCS Nano">
+                  <label for="product2" class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border-2 border-slate-200 p-3 transition hover:border-zocs-teal/50">
+                    <span><span class="block font-bold text-zocs-deep">ZOCS Nano</span><span class="mt-1 block text-xs text-slate-500">এই পণ্যটি প্রি-অর্ডার করতে নির্বাচন করুন</span></span>
+                    <span class="checkmark flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-300 text-xs">✓</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="my-7 border-t border-slate-100"></div>
+
+          <fieldset class="space-y-5">
+            <legend class="mb-4 text-lg font-bold text-zocs-deep">২. আপনার যোগাযোগের তথ্য</legend>
+            <div>
+              <label for="customerName" class="mb-2 block text-sm font-semibold text-slate-700">আপনার নাম <span class="text-zocs-red">*</span></label>
+              <input id="customerName" name="name" type="text" required autocomplete="name" placeholder="আপনার সম্পূর্ণ নাম লিখুন" class="input-field w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-base placeholder:text-slate-400">
+            </div>
+            <div>
+              <label for="customerPhone" class="mb-2 block text-sm font-semibold text-slate-700">মোবাইল নম্বর <span class="text-zocs-red">*</span></label>
+              <input id="customerPhone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" class="input-field w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-base placeholder:text-slate-400">
+            </div>
+            <div>
+              <label for="customerAddress" class="mb-2 block text-sm font-semibold text-slate-700">সম্পূর্ণ ঠিকানা <span class="text-zocs-red">*</span></label>
+              <textarea id="customerAddress" name="address" rows="3" required autocomplete="street-address" placeholder="বাসা/গ্রাম, রাস্তা, উপজেলা, জেলা লিখুন" class="input-field w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-base placeholder:text-slate-400"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="mt-6 rounded-2xl border border-zocs-teal/15 bg-[#f2f7f4] p-4">
+            <div class="flex items-start gap-3">
+              <span class="text-xl">🚚</span>
+              <div>
+                <p class="font-bold text-zocs-deep">আপনার ডেলিভারি চার্জ সম্পূর্ণ ফ্রি</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600">প্রি-অর্ডার করা গ্রাহকদের পণ্য হাতে পৌঁছে দিতে কোনো ডেলিভারি চার্জ নেওয়া হবে না। অগ্রিম কোনো পেমেন্টও প্রয়োজন নেই।</p>
+              </div>
+            </div>
+          </div>
+
+          <button id="submitButton" type="submit" class="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-zocs-teal px-6 py-4 text-base font-bold text-white shadow-lg shadow-zocs-teal/20 transition hover:bg-zocs-deep focus:outline-none focus:ring-4 focus:ring-zocs-teal/20">
+            প্রি-অর্ডার করতে চাই <span aria-hidden="true">→</span>
+          </button>
+          <p class="mt-3 text-center text-xs leading-5 text-slate-500">ফর্মে তথ্য দেওয়ার জন্য আপনাকে কোনো টাকা দিতে হবে না। অর্ডার নিশ্চিত করতে প্রয়োজনে আমরা আপনার সঙ্গে যোগাযোগ করব।</p>
+          <p id="formMessage" class="mt-4 hidden rounded-xl p-3 text-center text-sm" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-zocs-deep px-4 py-8 text-center text-white sm:px-6">
+    <img src="https://i.ibb.co.com/1ttbRrXX/548196661-122187893396295916-1404995700463876668-n.jpg" alt="" class="mx-auto mb-3 h-14 w-14 rounded-xl object-cover">
+    <p class="font-bold tracking-wide">ZOCS LIFESTYLE</p>
+    <p class="mt-2 text-sm text-white/70">আপনাদের আস্থা ও ভালোবাসাই আমাদের অনুপ্রেরণা।</p>
+    <p class="mt-5 text-xs text-white/50">© <span id="year"></span> Zocs Lifestyle. সর্বস্বত্ব সংরক্ষিত।</p>
+  </footer>
+
+  <script>
+    // এই সংস্করণটি শুধু ডিজাইন প্রিভিউ। Google Sheets / Apps Script সংযোগ এখনো যোগ করা হয়নি।
+    const form = document.getElementById('preorderForm');
+    const message = document.getElementById('formMessage');
+    const submitButton = document.getElementById('submitButton');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Auto-slide, previous/next buttons, dots এবং touch-swipe।
+    document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+      const track = gallery.querySelector('.gallery-track');
+      const slides = [...gallery.querySelectorAll('.gallery-image')];
+      const dotsWrap = gallery.querySelector('.gallery-dots');
+      const prev = gallery.querySelector('.gallery-prev');
+      const next = gallery.querySelector('.gallery-next');
+      let index = 0;
+      let timer;
+      let startX = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `ছবি ${i + 1} দেখুন`);
+        dot.addEventListener('click', () => { goTo(i); restart(); });
+        dotsWrap.appendChild(dot);
+      });
+      const dots = [...dotsWrap.children];
+
+      function goTo(nextIndex) {
+        index = (nextIndex + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      }
+      function restart() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo(index + 1), 3500);
+      }
+      prev.addEventListener('click', () => { goTo(index - 1); restart(); });
+      next.addEventListener('click', () => { goTo(index + 1); restart(); });
+      track.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+      track.addEventListener('pointerup', (e) => {
+        const delta = e.clientX - startX;
+        if (Math.abs(delta) > 35) { goTo(index + (delta < 0 ? 1 : -1)); restart(); }
+      });
+      gallery.addEventListener('mouseenter', () => clearInterval(timer));
+      gallery.addEventListener('mouseleave', restart);
+      gallery.addEventListener('focusin', () => clearInterval(timer));
+      gallery.addEventListener('focusout', restart);
+      restart();
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const selected = [...document.querySelectorAll('input[name="products"]:checked')];
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+
+      if (!selected.length) {
+        showMessage('অনুগ্রহ করে অন্তত একটি পণ্য নির্বাচন করুন।', false);
+        document.getElementById('product1').focus();
+        return;
+      }
+      if (!name || !phone || !address) {
+        showMessage('অনুগ্রহ করে সব প্রয়োজনীয় তথ্য পূরণ করুন।', false);
+        return;
+      }
+      if (!/^(?:\+?88)?01[3-9]\d{8}$/.test(phone.replace(/[\s-]/g, ''))) {
+        showMessage('সঠিক বাংলাদেশি মোবাইল নম্বর লিখুন।', false);
+        document.getElementById('customerPhone').focus();
+        return;
+      }
+      showMessage('এটি ডিজাইন প্রিভিউ। Google Sheets সংযোগ যুক্ত হলে এখান থেকেই আপনার প্রি-অর্ডার জমা দেওয়া যাবে।', true);
+    });
+
+    function showMessage(text, success) {
+      message.textContent = text;
+      message.className = 'mt-4 rounded-xl p-3 text-center text-sm ' +
+        (success ? 'bg-amber-50 text-amber-800' : 'bg-red-50 text-red-700');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Dependencies and build state
+node_modules/
+.firebase/
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+.clasp.json
+.clasprc.json
+**/.clasp.json
+**/.clasprc.json
+.firebaserc
+credentials*.json
+client_secret*.json
+service-account*.json
+*.pem
+*.key
+# Generated public configuration (contains only public URL)
+public/js/config.js
+# Owner details, reports and test/customer data
+.local/
+google-deployment.json
+INTEGRATION-VERIFICATION.md
+# Logs, editor files and backups
+*.log
+*.backup
+.vscode/
+.DS_Store
+Thumbs.db
+google-apps-script/Verification.gs

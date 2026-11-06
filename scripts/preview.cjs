@@ -1,0 +1,4 @@
+﻿// Local preview only; not part of the deployed website.
+const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve('public');
+http.createServer((req,res)=>{let p;try{p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));}catch{res.writeHead(400).end();return;}if(p!==root&&!p.startsWith(root+path.sep)){res.writeHead(403).end();return;}if(p===root||p.endsWith(path.sep))p=path.join(p,'index.html');fs.readFile(p,(err,data)=>{if(err){res.writeHead(404).end();return;}res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8'})[path.extname(p)]||'application/octet-stream');res.end(data);});}).listen(8080,'127.0.0.1',()=>console.log('Preview: http://127.0.0.1:8080'));
